@@ -5,6 +5,7 @@ import Inventory from './components/Inventory/Inventory';
 import Orders from './components/Orders/Orders';
 import Shop from './components/Shop/Shop';
 import Main from './layouts/Main';
+import { ProductsandCartLoader } from './loaders/ProductsandCartLoader';
 
 
 
@@ -23,9 +24,7 @@ function App() {
         },
         {
           path: '/orders',
-          loader: () =>{
-            return fetch('products.json')
-          },
+          loader: ProductsandCartLoader,
           element: <Orders></Orders>
         },
         {
